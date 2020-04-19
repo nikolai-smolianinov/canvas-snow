@@ -5,4 +5,4 @@
 My attempts to make snow falling using canvas
 
 
-[You can check result here](https://github.com/eternnoir/pyTelegramBotAPI)  
+[You can check result here](https://nikolai-smolianinov.github.io/)  
