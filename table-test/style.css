@@ -1,0 +1,83 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.custom-table {
+  max-width: 80%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+}
+
+.custom-table--head, .custom-table--body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+.custom-table--head {
+  background-color: #fbfbfb;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.custom-table__row {
+  overflow: hidden;
+  padding: 10px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "name balance isActive action" "child child child child";
+}
+
+.custom-table__cell {
+  padding: 0 5px;
+}
+
+.area-name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name;
+}
+
+.area-balance {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: balance;
+}
+
+.area-isActive {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: isActive;
+}
+
+.area-action {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: action;
+}
+
+.area-child {
+  border-left: 2px solid #c4c4c4;
+  padding-left: 10px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: child;
+  -webkit-transition: max-height .5s;
+  transition: max-height .5s;
+  max-height: 900px;
+}
+
+.area-child.collapsed {
+  max-height: 0;
+}
+
+.row-action {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
