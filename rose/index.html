@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ROSE</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <img src="./rose.png" alt="роза">
+    <input id="range" type="range" oninput="test()" min="0" max="1000" onchange="test()">
+
+    <script>
+
+        const input = document.getElementById('range')
+
+        const test = function (e) {
+            val = input.value
+
+            const rgb_val = Math.round(255 * val / 100)
+
+            console.log(`rgb(${rgb_val},${rgb_val},${rgb_val})`)
+
+            // document.body.style.backgroundColor = `rgb(${rgb_val},${rgb_val},${rgb_val})`
+            document.body.style.backgroundColor = `rgba(38, 50, 56, ${val / 1000})`
+        }
+    </script>
+
+</body>
+</html>
