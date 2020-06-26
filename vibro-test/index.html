@@ -10,6 +10,7 @@
 <body>
 <button id="b_500" onclick="triggerVibrate()">Vibrate</button>
 <div id="output"></div>
+<div id="output2"></div>
 
 
 
@@ -17,13 +18,18 @@
 
 
     function triggerVibrate () {
-        window.ReactNativeWebView.postMessage("Hello!")
+        ReactNativeWebView.postMessage("Hello!")
 
     }
 
 
     setTimeout(function () {
         window.ReactNativeWebView.postMessage("Hello!")
+    }, 2000)
+
+    setTimeout(() => {
+    	document.getElementById('output').innerHTML = JSON.stringify(window.ReactNativeWebView)
+    	document.getElementById('output2').innerHTML = JSON.stringify(ReactNativeWebView)
     }, 2000)
 
 
