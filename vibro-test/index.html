@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<button id="b_500" onclick="triggerVibrate()">vibrate</button>
+<button id="b_500" onclick="triggerVibrate()">Vibrate</button>
 <div id="output"></div>
 
 
@@ -16,14 +16,15 @@
 <script>
 
 
-    // function triggerVibrate () {
-    //   window.postMessage("vibrate");
-    //
-    // }
+    function triggerVibrate () {
+        window.ReactNativeWebView.postMessage("Hello!")
 
-		setTimeout(function () {
-			window.ReactNativeWebView.postMessage("Hello!")
-		}, 2000)
+    }
+
+
+    setTimeout(function () {
+        window.ReactNativeWebView.postMessage("Hello!")
+    }, 2000)
 
 
 </script>
