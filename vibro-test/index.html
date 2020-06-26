@@ -16,10 +16,14 @@
 <script>
 
 
-    function triggerVibrate () {
-      window.postMessage("vibrate");
+    // function triggerVibrate () {
+    //   window.postMessage("vibrate");
+    //
+    // }
 
-    }
+		setTimeout(function () {
+			window.ReactNativeWebView.postMessage("Hello!")
+		}, 2000)
 
 
 </script>
@@ -29,8 +33,9 @@
         padding: 40px;
     }
     button {
-        margin-top: 50px;
-        padding: 5px 15px;
+        margin-top: 20px;
+        padding: 8px 12px;
+
     }
 </style>
 </html>
