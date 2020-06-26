@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="b_500" onclick="trigger_500()">500</button>
+<button id="b_1000" onclick="trigger_1000()">1000</button>
+<button id="b_300 250 700" onclick="trigger_300_250_700()">300 250 700</button>
+
+
+<script>
+
+    const trigger_500 = () => {
+        window.navigator.vibrate(500)
+    }
+    const trigger_1000 = () => {
+    	window.navigator.vibrate(1000)
+    }
+    const trigger_300_250_700 = () => {
+    	window.navigator.vibrate([300, 250, 700])
+    }
+
+</script>
+</body>
+</html>
