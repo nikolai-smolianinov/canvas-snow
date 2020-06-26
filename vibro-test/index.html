@@ -6,27 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<style>
-    body {
-        padding: 40px;
-    }
-    button {
-        padding: 515px;
-    }
-</style>
+
 <body>
 <button id="b_500" onclick="triggerVibrate()">vibrate</button>
 <div id="output"></div>
+
 
 
 <script>
 
 
     function triggerVibrate () {
-			window.postMessage("vibrate");
+      window.postMessage("vibrate");
+
     }
 
 
 </script>
 </body>
+<style>
+    body {
+        padding: 40px;
+    }
+    button {
+        margin-top: 50px;
+        padding: 5px 15px;
+    }
+</style>
 </html>
