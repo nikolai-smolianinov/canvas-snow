@@ -18,7 +18,7 @@
 
 
     function triggerVibrate () {
-        ReactNativeWebView.postMessage({type: 'VIBRATE', data: {pattern: [200, 150, 1000]}})
+        ReactNativeWebView.postMessage(JSON.stringify({type: 'VIBRATE', data: {pattern: [200, 150, 1000]}}))
 
     }
 
