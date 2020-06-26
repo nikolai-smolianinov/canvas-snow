@@ -7,28 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-<button id="b_500" onclick="trigger_500()">500</button>
-<button id="b_1000" onclick="trigger_1000()">1000</button>
-<button id="b_300 250 700" onclick="trigger_300_250_700()">300 250 700</button>
+<button id="b_500" onclick="triggerVibrate(500)">500</button>
+<button id="b_1000" onclick="triggerVibrate(1000)">1000</button>
+<button id="b_300 250 700" onclick="triggerPatternVibrate([300, 250, 700])">300 250 700</button>
 <br>
 <div id="output"></div>
 
 
 <script>
 
-    const vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+    const vibrate = window.navigator.vibrate || window.navigator.webkitVibrate || window.navigator.mozVibrate || window.navigator.msVibrate;
 
-    const trigger_500 = () => {
-    	console.log('trigger_500')
-        vibrate(500)
+    function triggerVibrate (ms) {
+        vibrate(ms)
     }
-    const trigger_1000 = () => {
-    	console.log('trigger_1000')
-    	vibrate(1000)
-    }
-    const trigger_300_250_700 = () => {
-    	console.log('trigger_300_250_700')
-    	vibrate([300, 250, 700])
+
+    function triggerPatternVibrate (pattern) {
+        vibrate(pattern)
     }
 
     document.getElementById('output').innerText = JSON.stringify(vibrate)
