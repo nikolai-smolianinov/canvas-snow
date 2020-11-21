@@ -1,10 +1,10 @@
 const
     initSpeed = 10, // условная скорость самых ближних снежинок
     minSpeed = 5, // условная скорость самых дальних снежинок
-    maxParalaxDecline = 50, // максимальное смещение ближних снежинок
-    snowMaxAmount = 400,// максимальное количество снежинок
+    maxParallaxDecline = 50, // максимальное смещение ближних снежинок
+    snowMaxAmount = 3000,// максимальное количество снежинок
     initDiam = 15, // дефолтный диаметр, от которого расчитывается диаметр каждой снежинки
-    minDiamPercentage = 0.35, // минимальное отношение самых дальних снежинок к самым большим
+    minDiamPercentage = 0.35, // минимальное отношение самых дальних снежинок к самым ближним
 
     canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d');
@@ -19,12 +19,12 @@ window.addEventListener('resize', (e) => {
 
 class Snowflake {
     constructor () {
-        this.depth = Math.ceil(Math.random() * 10) / 10,
-            this.speed = ((Math.random() * (initSpeed - minSpeed)) + minSpeed) * (this.depth + 0.5),
-            this.diam = this.depth * (initDiam - minDiamPercentage * initDiam) + minDiamPercentage * initDiam,
-            this.xPos = (Math.random() * (canvas.width + 200)) - 100,
-            this.yPosStart = Snowflake.yPos,
-            this.yPos = 0
+        this.depth = Math.ceil(Math.random() * 10) / 10
+				this.speed = ((Math.random() * (initSpeed - minSpeed)) + minSpeed) * (this.depth + 0.5)
+				this.diam = this.depth * (initDiam - minDiamPercentage * initDiam) + minDiamPercentage * initDiam
+				this.xPos = (Math.random() * (canvas.width + 200)) - 100
+				this.yPosStart = Snowflake.yPos
+				this.yPos = 0
     }
 
     static moveY () {
@@ -65,8 +65,8 @@ document.addEventListener('mousemove', (e) => {
     const center = canvas.width / 2
     const distance = mouseX - center
     const reversed = distance < 0
-    const persantage = Math.abs(distance) / center
-    const finalDecline = persantage * maxParalaxDecline * (reversed ? 1 : -1)
+    const percentage = Math.abs(distance) / center
+    const finalDecline = percentage * maxParallaxDecline * (reversed ? 1 : -1)
 
     Snowflake.declineX(finalDecline)
 })
