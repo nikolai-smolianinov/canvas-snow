@@ -1,0 +1,7 @@
+/node_modules
+/downloaded
+/temp
+/dist
+/build
+.env.test
+.idea

@@ -1,2 +1,2 @@
-# canvas-snow
-My attempts to make snow falling using canvas
+# One day here will be something great
+### Or may be not
